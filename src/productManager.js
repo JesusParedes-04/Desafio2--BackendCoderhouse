@@ -1,6 +1,6 @@
 import {promises as fs} from "fs"
 
-class ProductManager {
+export default class ProductManager {
 
 constructor(){
     this.path = "./product.txt"
@@ -90,25 +90,28 @@ await fs.writeFile(this.path,JSON.stringify(productsModify))
 
 }
 
-const productManage = new ProductManager
+// const productManage = new ProductManager
 
 // productManage.addProduct('Test Title', 'this is a test description' , 200, 'no image', '123abc' , 25)
 // productManage.addProduct('Test Title2', 'this is a test description2' , 2200, 'no image2', '2123abc' , 225)
 // productManage.addProduct('Test Title3', 'this is a test description3' , 3200, 'no image3', '2125abc' , 1225)
+// productManage.addProduct('Test Title4', 'this is a test description4' , 4200, 'no image4', '2125abc' , 1225)
+// productManage.addProduct('Test Title5', 'this is a test description5' , 5200, 'no image5', '2125abc' , 1225)
+// productManage.addProduct('Test Title6', 'this is a test description6' , 6200, 'no image6', '2125abc' , 1225)
 
 // productManage.getProductsById(1)
 
-productManage.getProducts()
+// productManage.getProducts()
 
 
- productManage.updateProducts({
+//  productManage.updateProducts({
 
-title: 'Test Title',
-description: 'this is a test description',
-price: 500,
-thumbnail: 'no image',
-code: '123abc',
-stock: 25,
-id: 1
+// title: 'Test Title',
+// description: 'this is a test description',
+// price: 500,
+// thumbnail: 'no image',
+// code: '123abc',
+// stock: 25,
+// id: 1
 
- })
+//  })
