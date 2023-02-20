@@ -1,11 +1,8 @@
-
 import {promises as fs} from "fs"
-
 
 class ProductManager {
 
 constructor(){
-
     this.path = "./product.txt"
     this.productsArray = []
 }
@@ -27,27 +24,31 @@ stock,
 id: ProductManager.id
 }
 
+//Agregar producto al array vacio
 this.productsArray.push(newProduct)
 
+//Leyendo y transformando el objeto a string:
 await fs.writeFile(this.path, JSON.stringify(this.productsArray))
 
 }
 
+//Leer archivos 
 readingGetProducts = async () => {
     let response = await fs.readFile(this.path, 'utf-8')
+//Mostrar response como objeto
 return JSON.parse(response)
 
 
 }
 
 getProducts = async () => {
-
+//Creamos variable que va esperar que se resuelva la funcion anterior
 let responseTwo = await this.readingGetProducts()
 return console.log(responseTwo)
 
 
 }
-
+//Filtrado por ID
 getProductsById = async (id) => {
 
 let responseThree = await this.readingGetProducts()
@@ -95,10 +96,10 @@ const productManage = new ProductManager
 // productManage.addProduct('Test Title2', 'this is a test description2' , 2200, 'no image2', '2123abc' , 225)
 // productManage.addProduct('Test Title3', 'this is a test description3' , 3200, 'no image3', '2125abc' , 1225)
 
+// productManage.getProductsById(1)
 
 productManage.getProducts()
 
-// productManage.getProductsById(1)
 
  productManage.updateProducts({
 
